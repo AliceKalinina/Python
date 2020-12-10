@@ -1,0 +1,75 @@
+a = 20
+b = a + 5
+print("20+5 =", b)
+
+print(a * b)
+
+name = "Алиса"
+age = 25
+print("Меня зовут", name, "и мне ", age , "лет. " )
+if age >= 18:
+    print("Доступ разрешен")
+else:
+    print("Доступ заблокирован")
+
+
+
+
+time = int(input("Введите время в секундах: "))
+hours = time // 3600
+minutes = (time - hours * 3600) // 60
+seconds = time - (hours * 3600 + minutes * 60)
+print(f"Время в формате чч:мм:сс:   {hours} : {minutes} : {seconds}")
+
+n = int(input("Введите число - "))
+total = (n + int(str(n) + str(n)) + int(str(n) + str(n)+ str(n)))
+print("Сумма чисел n + nn + nnn - %d" % total)
+
+g = int(input("Введите число - "))
+total1 = (g * int(str(g)))
+print("Результат умножения g * g - %d" % total1)
+
+i = abs(int(input("Введите целое положительное число: ")))
+s = str(i)
+ls = list(map(int, s))
+r = max(ls)
+print(r)
+
+n = abs(int(input("Введите целое положительное число: ")))
+mv = n % 10
+while n > 0:
+    n = n // 10
+    mv = max(mv, n%10)
+print(mv)
+
+n = abs(int(input("Введите целое положительное число: ")))
+mv = n % 10
+while n > 0:
+    n = n // 10
+if n > 0:
+    mv = min(mv, n%10)
+print(mv)
+
+proсeeds = abs(int(input("Введите выручку:")))
+costs = abs(int(input("Введите издержки:")))
+if proсeeds > costs:
+    print("Вы работаете в прибыль!")
+elif proсeeds == costs:
+    print("Вы вышли в ноль")
+else:
+    print("Вы работаете в убыток!")
+profit = proсeeds - costs
+print("Ваша прибыль составила:" , profit)
+profitability = profit / proсeeds * 1
+print("Рентабельность: ", profitability)
+workers = abs(int(input("Введите количество работников:")))
+profit_workers = profit / workers
+print("Прибыль на каждого сотрудника составила: " , profit_workers)
+
+a_result = int(input("Введите количество пройденных километров: "))
+b_result = int(input("Введите количество желаемых километров: "))
+day = 1
+while a_result < b_result:
+    a_result *= 1.1
+    day += 1
+print(day)
