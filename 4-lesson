@@ -1,0 +1,73 @@
+#task_1
+from sys import argv
+print(argv)
+file_name, worked_hour, rate, benefit = argv
+
+calculation = (int(worked_hour) * int(rate)) + int(benefit)
+print(f"Your pay is equal {calculation}")
+
+#task_2
+from random import randrange
+
+
+n = 100
+list_numbers = [randrange(1, 100) for i in range(n)]
+result = []
+new_list = [list_numbers[el] for el in range(1, len(list_numbers)) if list_numbers[el] > list_numbers[el - 1]]
+print(new_list)
+#task_3
+print([item for item in range(20, 241) if item % 20 == 0 or item % 21 == 0])
+
+#task_4
+example_list = [2, 2, 2, 7, 23, 1, 44, 44, 3, 2, 10, 7, 4, 11]
+result = [el for el in example_list if example_list.count(el) == 1]
+print(result)
+
+#task_5
+from functools import reduce
+
+
+def my_func(prev_el, el):
+    return prev_el * el
+
+
+my_list = [el for el in range(100, 1001) if el % 2 == 0]
+print(reduce(my_func, my_list))
+
+
+#task_6
+from itertools import count, cycle
+for el in count(5):
+    if el == 10:
+        break
+    print(el)
+
+my_list = [1,2, "text"]
+count = 0
+for el in cycle(my_list):
+    if count >= 10:
+        break
+    print(el, end=" ")
+    count += 1
+print(" ")
+#task_7
+from itertools import count
+
+
+def  calc_factorial(n):
+    res = 1
+    for i in range(1, n + 1):
+        res *= i
+    return res
+
+
+def fact(n):
+    for item in count(1):
+        if n>= item:
+           yield calc_factorial(item)
+        else:
+            break
+
+
+for el in fact(5):
+    print(el)
